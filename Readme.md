@@ -1,3 +1,4 @@
 # Node.js basics
 
-## !!! Please don't submit Pull Requests to this repository !!!
+### Documentation used:
+- [File System](https://nodejs.org/docs/latest/api/fs.html#fspromisesreaddirpath-options)
