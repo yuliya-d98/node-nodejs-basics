@@ -1,4 +1,4 @@
-import { access, appendFile, constants } from 'node:fs/promises';
+import { access, appendFile } from 'node:fs/promises';
 const create = async () => {
     const filePath = "files/fresh.txt";
     try {
