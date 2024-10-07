@@ -1,4 +1,4 @@
-import { sep, dirname } from 'node:path';
+import path, { sep, dirname } from 'node:path';
 import { release, version } from 'node:os';
 import { createServer as createServerHttp } from 'node:http';
 import { pathToFileURL, fileURLToPath } from 'node:url';
@@ -19,11 +19,10 @@ console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);
 console.log(`Path segment separator is "${sep}"`);
 
-// https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/
-const filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-console.log(`Path to current file is ${pathToFileURL(filename).href}`);
+console.log(`Path to current file is ${pathToFileURL(__filename).href}`);
 console.log(`Path to current directory is ${__dirname}`);
 
 const myServer = createServerHttp((_, res) => {
